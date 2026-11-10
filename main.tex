@@ -1,15 +1,17 @@
-\documentclass[10pt, letterpaper]{article}
+\documentclass[11pt, letterpaper]{extarticle}
 
 % Packages:
 \usepackage[
     ignoreheadfoot, 
-    top=6 mm, 
-    bottom=6 mm, 
-    left=7.5 mm, 
-    right=7.5 mm, 
+    top=4 mm,
+    bottom=4 mm,
+    left=5.5 mm,
+    right=5.5 mm,
     footskip=0 mm, 
 ]{geometry} 
 \usepackage{titlesec} 
+\usepackage{ragged2e}
+\usepackage[none]{hyphenat}
 \usepackage{tabularx} 
 \usepackage{array} 
 \usepackage[dvipsnames]{xcolor} 
@@ -45,24 +47,28 @@
 \usepackage{charter}
 
 % Settings:
-\raggedright
+\justifying
 \AtBeginEnvironment{adjustwidth}{\partopsep0pt} 
 \pagestyle{empty} 
 \setcounter{secnumdepth}{0} 
 \setlength{\parindent}{0pt} 
+\setlength{\emergencystretch}{4em}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
 \setlength{\topskip}{0pt} 
 \setlength{\columnsep}{0.15cm} 
 \pagenumbering{gobble} 
+\linespread{0.9}
 
-\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titleformat{\section}{\needspace{2\baselineskip}\bfseries\normalsize}{}{0pt}{}[\vspace{0.5pt}\titlerule]
 
-\titlespacing{\section}{-1pt}{0.2 cm}{0.15 cm} 
+\titlespacing{\section}{-1pt}{0.08 cm}{0.05 cm}
 
 \renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$} 
 \newenvironment{highlights}{
     \begin{itemize}[
-        topsep=0.05 cm,
-        parsep=0.05 cm,
+        topsep=0.01 cm,
+        parsep=0pt,
         partopsep=0pt,
         itemsep=0pt,
         leftmargin=0 cm + 10pt
@@ -89,7 +95,7 @@
 } 
 
 \newenvironment{header}{
-    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.05}
 }{
     \par\kern\topsep
 } 
@@ -105,9 +111,9 @@
     \sbox\ANDbox{$|$}
 
     \begin{header}
-        \fontsize{24 pt}{24 pt}\selectfont Aman Kumar
+        \fontsize{22 pt}{22 pt}\selectfont Aman Kumar
 
-        \vspace{2 pt}
+        \vspace{1 pt}
         \normalsize
         \mbox{\hrefWithoutArrow{tel:+918218276462}{\faPhone\hspace{0.2em}+91 8218276462}}%
         \kern 5.0 pt%
@@ -128,21 +134,21 @@
 
     \section{Summary}
     \begin{onecolentry}
-        \textbf{Software Engineer} with 2+ years of experience specializing in high-throughput payment infrastructure, scalable microservices, and distributed systems. Proven track record in orchestrating event-driven architectures using \textbf{Node.js}, \textbf{TypeScript}, and \textbf{Go (Golang)} to build resilient financial workflows. Adept at optimizing transaction integrity, designing dynamic routing frameworks, and engineering high-availability systems with a strong commitment to correctness, idempotency, and fault tolerance.
+        \textbf{Backend Engineer} with 2+ years of experience building scalable backend services, event-driven pipelines, and distributed microservices. Experienced in Go, Node.js, TypeScript, Redis, SQL/NoSQL and cloud infrastructure. Delivered measurable gains in database performance, AI platform adoption, and reliability; also built an offline-first mobile product end-to-end.
     \end{onecolentry}
 
     \section{Technical Skills}
     \begin{onecolentry}
-        \textbf{Languages:} Node.js, TypeScript, Go (Golang), JavaScript, SQL, C++, Python, Object-Oriented Design (OOD)
+        \textbf{Languages:} Go (Golang), TypeScript, JavaScript, SQL, C++, Python
     \end{onecolentry}
     \begin{onecolentry}
-        \textbf{Distributed Systems \& Payments:} Microservices Architecture, Payment Infrastructure \& Gateways, Subscription Engines, Dynamic Traffic Routing, Asynchronous Event Processing, RESTful APIs, High-Availability Systems
+        \textbf{Backend:} Node.js, Gin, Temporal, Microservices, REST, Event-Driven, Offline-First Sync, LLM Integration, Idempotency
     \end{onecolentry}
     \begin{onecolentry}
-        \textbf{Databases \& Infrastructure:} MongoDB, MySQL, PostgreSQL, Redis, AWS (SQS, Lambda, EC2), GCP, Kubernetes
+        \textbf{Data \& Infra:} PostgreSQL, MySQL, MongoDB, Redis, BigQuery, AWS (SQS, Lambda, EC2), GCP, Kubernetes, Docker
     \end{onecolentry}
      \begin{onecolentry}
-        \textbf{Operations \& Observability:} Concurrency \& Idempotency Management, Incident Management, Root Cause Analysis (RCA), Git, Jenkins, JIRA, Agile Sprints
+        \textbf{Frontend \& Tools:} React, Next.js, React Native (Expo), Git, Jenkins, JIRA, Incident Management \& RCA
     \end{onecolentry}
 
     \section{Experience}
@@ -152,51 +158,59 @@
     \vspace{0.05 cm}
     \begin{onecolentry}
         \begin{highlights}
-            \item \textbf{AI Studio Platform:} Built the backend powering \textbf{9,697 AI generations in 10 weeks} (approximately \textbf{139/day}) with a \textbf{93\% success rate}, delivering \textbf{8,931 AI-generated assets} across \textbf{19 models}, including \textbf{Seedance 2.5, Kling, Veo, Nano Banana, and GPT Image 2}; scaled monthly usage by \textbf{2.4x} without re-architecture, enabled granular tracking of \textbf{\$20.6K AI spend}, and shipped prompt refinement with \textbf{71\% creator acceptance} and an AI assistant powered by \textbf{Claude, GPT, and Gemini}, serving \textbf{787 queries}.
-            \item \textbf{Payment Infrastructure Migration:} Spearheaded the end-to-end modernization of mission-critical payment integration layers from legacy v1 to v2 microservices; enforced rigid multi-tenant validations and transactional correctness patterns to eliminate downstream data drift.
+            \item \textbf{Data Lifecycle \& Migration:} Managed database state optimization and background synchronization during a large-scale migration of millions of active profiles, leveraging idempotent batch routines to safeguard data consistency; recognized with the \textbf{\href{https://drive.google.com/file/d/1FOHJumoUjJBDf5vh6j29Qsov4uCIu1Ro/view?usp=sharing}{Power Player}} award.
+            \item \textbf{Payment Infrastructure Migration:} Spearheaded end-to-end modernization of mission-critical payment integration layers from legacy v1 to v2 microservices; enforced multi-tenant validations and transactional correctness to prevent downstream data drift.
+            \item \textbf{AI Studio Platform:} Built a multi-model AI generation backend supporting \textbf{19 models} and \textbf{1,500--2,000 generations per week} at a \textbf{93\% success rate}; developed a conversational assistant that provides generation-pipeline context and refines prompts, achieving \textbf{71\% creator acceptance} across \textbf{787 queries}; scaled monthly usage \textbf{2.4x} without re-architecture and enabled tracking of \textbf{\$20.6K} in AI spend.
             % \item \textbf{Dynamic Routing \& Subscriptions:} Engineered an automated A/B experimentation routing engine using Node.js/Go to dynamically balance live transaction volumes across payment endpoints, ensuring absolute fault isolation and 100\% availability for subscription workflows.
-            \item \textbf{High-Throughput Architecture:} Designed and deployed distributed backend microservices handling millions of real-time platform events and concurrent user metadata streams with strong emphasis on low-latency execution and high availability.
-            \item \textbf{Event-Driven Pipelines:} Built a highly reliable event analytics infrastructure using an asynchronous Google BigQuery layer paired with a performance-tuned Redis/Go deduplication engine to guarantee transaction integrity and strict schema isolation during peak traffic spikes.
-            \item \textbf{Data Lifecycle \& Migration:} Managed the database state optimization and background synchronization during a massive migration of millions of active profiles, leveraging idempotent batch routines to safeguard systemic correctness; honored with the \textbf{\href{https://drive.google.com/file/d/1FOHJumoUjJBDf5vh6j29Qsov4uCIu1Ro/view?usp=sharing}{Power Player}} award.
-            \item \textbf{Observability \& Fault Tolerance:} Championed runtime system health tracking and incident response management, introducing fallback strategies, retry handling loops, and circuit breakers that decreased platform downtime and optimized target system P99 latency by \textbf{60\%}.
+            \item \textbf{High-Throughput Architecture:} Designed and deployed distributed backend microservices handling millions of real-time platform events and concurrent user metadata streams with an emphasis on low-latency execution and high availability.
+            \item \textbf{Event-Driven Pipelines:} Built reliable event analytics infrastructure using an asynchronous Google BigQuery layer paired with a performance-tuned Redis/Go deduplication engine to ensure transaction integrity and schema isolation during peak traffic.
+            \item \textbf{Observability \& Fault Tolerance:} Championed runtime health monitoring and incident response, introducing fallback strategies, retries, and circuit breakers that reduced downtime and optimized target-system P99 latency by \textbf{60\%}.
+            \item \textbf{Authentication APIs:} Extended core authentication services to onboard a new application; built secure signup/login APIs and integrated OtpLess with automated fallback.
+            \item \textbf{Avatar Upload Performance:} Redesigned the user avatar upload flow with a Redis-backed CDN URL pool, reducing API latency and improving user onboarding.
+            \item \textbf{Event Tracking:} Standardized event tracking across distributed microservices by adding Android/iOS client identifiers for platform-specific analytics and debugging.
             \item {Tech stack: \textbf{Node.js, TypeScript, Go, MySQL, PostgreSQL, MongoDB, Redis, Google BigQuery, GCP, RESTful APIs, Git}}
         \end{highlights}
     \end{onecolentry}
     
-    \vspace{0.15 cm}
+    \vspace{0.05 cm}
 
-    \begin{twocolentry}{June 2024 – April 2025}
+    \begin{twocolentry}{April 2024 – April 2025}
     \textbf{SDE-1}, \href{https://www.linkedin.com/company/uolo/}{Uolo} -- Gurugram, Haryana
     \end{twocolentry}
     \vspace{0.05 cm}
     \begin{onecolentry}
         \begin{highlights}
-            \item \textbf{Transactional Governance \& Ledgers:} Programmed complex multi-table financial reporting workflows and core ledger modules using optimized SQL scripts, guaranteeing rigid ACID compliance, secure audit trails, and strict transaction logging.
-            \item \textbf{Asynchronous Message Queues:} Architected a distributed task processing engine utilizing \textbf{Amazon SQS} to decouple heavy billing calculations and long-running data workflows from core API runtimes, maximizing throughput across microservices.
-            \item \textbf{Database Performance Tuning:} Audited high-volume databases and restructured slow workflows, achieving a \textbf{95\% reduction in MongoDB latency} (slashing query execution from 58s to 3s) through composite indexing and cursor optimizations.
-            \item \textbf{Full-Stack Feature Velocity:} Accelerated sprint cycles in a high-velocity Agile environment by taking end-to-end ownership of product requirements, building out backend microservices (Node.js) and frontend integrations (React, Next.js, TypeScript).
+            \item \textbf{Database Tuning:} Cut MongoDB aggregation latency by \textbf{95\%} (58s to 3s) via query optimization and indexing.
+            \item \textbf{Notifications:} Built a school-wide notification engine on \textbf{Amazon SQS}, offloading background work from API servers.
+            \item \textbf{Fees Reporting:} Built Fees-module reporting APIs with tuned SQL in Node.js, plus React/Next.js integrations.
             \item {Tech stack: \textbf{Node.js, TypeScript, React, Next.js, AWS, Amazon SQS, SQL, MongoDB, Git, JIRA}}
+        \end{highlights}
+    \end{onecolentry}
+
+    \section{Projects}
+    \begin{twocolentry}{Oct 2026 – Present}
+    \textbf{\href{https://github.com/BloomHealthApp}{Bloom Health}} -- Offline-first habit tracker with AI chat \textbar{} \href{https://github.com/BloomHealthApp}{github.com/BloomHealthApp}
+    \end{twocolentry}
+    \vspace{0.05 cm}
+    \begin{onecolentry}
+        \begin{highlights}
+            \item \textbf{Go Backend:} Built a Gin REST + sync API on MongoDB Atlas with passwordless OTP auth, refresh-token rotation with reuse detection, server-enforced owner/viewer access control, rate limiting, Wire DI, and race-tested CI.
+            \item \textbf{Offline-First Sync:} Expo/React Native app writes to SQLite first and syncs through a queue with stable operation IDs; idempotent push/pull with optimistic versions, conflict detection, last-write-wins daily logs, and tombstones.
+            \item \textbf{AI Companion \& Workers:} Served the ``Bloomy'' chat through a Go worker that leases queued turns from MongoDB with retries and calls an LLM (Groq), plus daily account-purge jobs; deployed on GCP via tag-based releases.
+            \item {Tech stack: \textbf{Go, Gin, MongoDB Atlas, TypeScript, Expo / React Native, SQLite, GCP}}
         \end{highlights}
     \end{onecolentry}
 
     \section{Education}
     \begin{twocolentry}{Oct 2020 – May 2024}
-    \textbf{Institute of Engineering and Technology (IET), Lucknow}
+    \textbf{B.Tech, Information Technology}, IET Lucknow -- GPA 8.5/10
     \end{twocolentry}
-    \vspace{0.05 cm}
-    \begin{onecolentry}
-        \begin{highlights}
-            \item \textbf{B.Tech in Information Technology - IT} | GPA: 8.5/10
-            \item \textbf{Core Coursework:} Data Structures \& Algorithms (DSA), Database Management Systems (DBMS), Object-Oriented Programming (OOP), Operating Systems, Distributed Computing Fundamentals.
-        \end{highlights}
-    \end{onecolentry}
-    
 
     \section{Achievements}
     \begin{onecolentry}
         \begin{highlights}
-            \item \textbf{Competitive Coding:} Ranked 88th out of 90,000+ engineers in the Innovate India Coding Championship [\href{https://drive.google.com/file/d/1Uq0hlzBOx3fmnQFqw7mXnZ5fT-cV4JKc/view}{\underline{\textcolor{black}{IICC}}}].
-            \item \textbf{Problem Solving:} Ranked 14th in CodeDrift October 1.0 by Scaler; achieved a 5-Star Coder profile on CodeChef (Peak Rating: 2047), Solved over 2,000 algorithmic and system design optimization challenges.
+            \item \textbf{Competitive Coding:} Ranked \textbf{88th of 90,000+} in \href{https://drive.google.com/file/d/1Uq0hlzBOx3fmnQFqw7mXnZ5fT-cV4JKc/view}{\underline{IICC}} (AICTE); \href{https://leetcode.com/apcode15/}{\underline{LeetCode}} 1820 (top 7.6\%); \href{https://codeforces.com/profile/apcode15}{\underline{Codeforces}} Specialist.
+            \item \textbf{Problem Solving:} Ranked 14th in Scaler CodeDrift October 1.0; \href{https://www.codechef.com/users/apcode15}{\underline{CodeChef}} 5-star (peak rating: 2047); solved 2,000+ algorithmic problems.
         \end{highlights}
     \end{onecolentry}
 
